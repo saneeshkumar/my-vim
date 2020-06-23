@@ -12,3 +12,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 VimAwesome
 
 https://vimawesome.com/plugin/hardmode
+
+Install fzf and ag search
