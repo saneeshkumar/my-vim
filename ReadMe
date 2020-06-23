@@ -8,3 +8,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     
 :PlugInstall to install the plugins.
 :PlugUpdate to update the plugins.
+
+VimAwesome
+
+https://vimawesome.com/plugin/hardmode
