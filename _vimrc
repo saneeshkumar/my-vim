@@ -32,7 +32,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 if has('gui_running')
     syntax enable
     set background=dark
-    colorscheme solarized
+    colorscheme solarized8
+	set guifont=Consolas:h11
 endif
 
 let g:javascript_plugin_jsdoc = 1 " Enable JS docs
