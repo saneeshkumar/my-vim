@@ -9,6 +9,8 @@ Plug 'altercation/solarized' " Solarized Plugin
 Plug 'pangloss/vim-javascript' " Javascript plugin
 Plug 'scrooloose/syntastic' "syntax highlight
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " Fuzzy Finder
+Plug 'itchyny/lightline.vim' " Modify status line
+Plug 'tpope/vim-surround' " vim surround
 
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
@@ -32,8 +34,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 if has('gui_running')
     syntax enable
     set background=dark
-    colorscheme solarized8
-	set guifont=Consolas:h11
+    colorscheme solarized
+	set guifont=Consolas:h12
 endif
 
 let g:javascript_plugin_jsdoc = 1 " Enable JS docs
@@ -95,3 +97,17 @@ set wildmenu
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+
+set omnifunc=syntaxcomplete#Complete
+
+:set spell spelllang=en_us " Spell checker
+
+:set listchars=eol:¬,tab:»·,trail:·,extends:>,precedes:<,space:·
+
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
