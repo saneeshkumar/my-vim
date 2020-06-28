@@ -21,8 +21,15 @@ autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 " use \h to toggle hardmode
 nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 
-" Enable line number
-:set number
+" Enable line number and relative number
+:set number relativenumber
+
+" Toggle relative numbering automatically
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+:augroup END
 
 "Set highlight search
 :set hls
@@ -34,8 +41,8 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 if has('gui_running')
     syntax enable
     set background=dark
-    colorscheme solarized
-	set guifont=Consolas:h12
+    colorscheme solarized8
+	set guifont=Consolas:h11
 endif
 
 let g:javascript_plugin_jsdoc = 1 " Enable JS docs
