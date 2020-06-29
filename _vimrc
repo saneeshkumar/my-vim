@@ -41,16 +41,16 @@ nnoremap <leader>h <Esc>:call ToggleHardMode()<CR>
 if has('gui_running')
     syntax enable
     set background=dark
-    colorscheme solarized8
-	set guifont=Consolas:h11
+    colorscheme solarized
+	set guifont=Consolas:h12
 endif
 
 let g:javascript_plugin_jsdoc = 1 " Enable JS docs
 let g:javascript_plugin_ngdoc = 1 " Enable NG docs
 
-"set the with of tabstop to 4 spaces
+"set the with of tab stop to 4 spaces
 set tabstop=4
-"make indentation to correnspond to one tab
+"make indentation to correspond to one tab
 set shiftwidth=4
 
 "Always display the status line
@@ -59,7 +59,7 @@ set laststatus=2
 "Don't try to be compatible with Vi
 set nocompatible
 
-"Turn syntax highlighting on for programing
+"Turn syntax highlighting on for programming
 syntax on
 
 "Detect file types
@@ -74,7 +74,7 @@ set t_Co=256
 "Add warnings to status bar
 set statusline+=%#warningmsg#
 
-"Gice syntastic access to the status line
+"Get syntastic access to the status line
 set statusline+=%{SyntasticStatuslineFlag()}
 
 "Back to normal color
@@ -84,7 +84,7 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 
-"check for errors on open ad on sabe exit
+"check for errors on open and on exit
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
@@ -92,15 +92,15 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 
 "Build Fuzzy Finder
-"Search and autocomplete into subfolders
+"Search and auto complete into sub folders
 set path+=**
 "Append to existing value of path
-"the 2 stars tells vim to search Subdirectorties recursively in the folder vim is running
+"the 2 stars tells vim to search Sub directories recursively in the folder vim is running
 
 "Use Tab for auto completion
 set wildmenu
 
-"FZF key Remap
+"fzf key Remap
 nnoremap <silent> <leader>f :FZF<cr>
 nnoremap <silent> <leader>F :FZF ~<cr>
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -108,7 +108,7 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 set omnifunc=syntaxcomplete#Complete
 
 :set spell spelllang=en_us " Spell checker
-
+set list
 :set listchars=eol:¬,tab:»·,trail:·,extends:>,precedes:<,space:·
 
 filetype plugin indent on
